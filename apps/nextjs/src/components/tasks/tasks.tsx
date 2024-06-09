@@ -22,7 +22,7 @@ function Task({ title }: { title: string }) {
     `task-${title}`,
   );
   return (
-    <Card className="w-[500px]">
+    <Card className="w-full md:w-[500px]">
       <CardHeader>
         <CardTitle>{taskState.state.title}</CardTitle>
         <CardDescription>{taskState.state.description}</CardDescription>
@@ -68,7 +68,7 @@ export function Tasks() {
   return (
     <div className="flex flex-col space-y-4">
       <h1>Tasks</h1>
-      <div className="h-[600px] space-y-4 overflow-y-auto">
+      <div className="max-h-[400px] space-y-4 overflow-y-auto">
         {tasksState.state.length ? (
           tasksState.state.map((task, index) => (
             <FormProvider<typeof assigneeForm, TaskListState[number]>
