@@ -1,9 +1,9 @@
 import type { infer as zodInfer, ZodObject, ZodRawShape } from "zod";
 
-export /**
+/**
  * Utility type to map the schema's shape to an error message shape
  */
-type ErrorShape<T> = {
+export type ErrorShape<T> = {
   [K in keyof T]?: T[K] extends ZodObject<ZodRawShape>
     ? ErrorShape<zodInfer<T[K]>>
     : string;
