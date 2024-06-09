@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 25 0% 100%;
+  --foreground: 25 0% 10%;
+  --card: 25 0% 100%;
+  --card-foreground: 25 0% 15%;
+  --popover: 25 0% 100%;
+  --popover-foreground: 25 95% 10%;
+  --primary: 25 1% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 25 10% 90%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: -13 10% 95%;
+  --muted-foreground: 25 0% 40%;
+  --accent: -13 10% 90%;
+  --accent-foreground: 25 0% 15%;
+  --destructive: 0 50% 50%;
+  --destructive-foreground: 25 0% 100%;
+  --border: 25 20% 82%;
+  --input: 25 20% 50%;
+  --ring: 25 1% 38%;
+  --radius: 1rem;
+  --brand-foreground: 0 0% 10%;
+
+    --brand: 11 100% 50%;
+    --brand-alt: 0 100% 71%
+
+  }
+ 
+  .dark {
+    --background: 25 10% 5%;
+  --foreground: 25 0% 90%;
+  --card: 25 0% 0%;
+  --card-foreground: 25 0% 90%;
+  --popover: 25 10% 5%;
+  --popover-foreground: 25 0% 90%;
+  --primary: 25 1% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 25 10% 10%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: -13 10% 15%;
+  --muted-foreground: 25 0% 60%;
+  --accent: -13 10% 15%;
+  --accent-foreground: 25 0% 90%;
+  --destructive: 0 50% 30%;
+  --destructive-foreground: 25 0% 90%;
+  --border: 25 20% 18%;
+  --input: 25 20% 18%;
+  --ring: 25 1% 38%;
+  --radius: 1rem;
+    --brand: 11 100% 50%;
+    --brand-foreground: 0 0% 10%;
+    --brand-alt: 0 100% 71%
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .blend-text {
+    position: relative;
+    z-index: 1;
+    mix-blend-mode: difference; /* Adjust the blend mode as needed */
+    color: white; /* Default color */
+  }
+  
+  .blend-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    z-index: -1;
+    mix-blend-mode: multiply; /* Adjust the blend mode as needed */
+  }
+}
