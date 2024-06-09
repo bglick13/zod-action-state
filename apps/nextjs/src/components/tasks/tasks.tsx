@@ -52,7 +52,9 @@ function Task({ title }: { title: string }) {
               <span className="text-red-500">{taskState.errors.name}</span>
             )}
           </div>
-          <Button type="submit">Add Assignee</Button>
+          <Button type="submit" disabled={taskState.isSubmitting}>
+            Add Assignee
+          </Button>
         </form>
       </CardContent>
     </Card>
@@ -113,7 +115,9 @@ export function Tasks() {
           value={tasksState.formData.description}
           onChange={tasksState.handleChange}
         />
-        <Button type="submit">Add Task</Button>
+        <Button type="submit" disabled={tasksState.isSubmitting}>
+          Add Task
+        </Button>
       </form>
     </div>
   );
